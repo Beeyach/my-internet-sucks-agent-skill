@@ -5,6 +5,7 @@ import importlib.util
 import json
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest import mock
@@ -91,13 +92,13 @@ class NetmodeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             completed = subprocess.run(
-                ["python3", str(SCRIPT), "--root", str(root), "status", "--json"],
+                [sys.executable, str(SCRIPT), "--root", str(root), "status", "--json"],
                 check=True,
                 capture_output=True,
                 text=True,
             )
             payload = json.loads(completed.stdout)
-            self.assertEqual(payload["root"], str(root))
+            self.assertEqual(Path(payload["root"]).resolve(), root.resolve())
             self.assertEqual(payload["counts"]["pending"], 0)
 
 
