@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private security report
+    url: https://bloomwired.io/contact
+    about: Report credential exposure, unsafe command execution, or retry vulnerabilities privately.

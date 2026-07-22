@@ -1,0 +1,41 @@
+name: Bug report
+description: Report incorrect, unsafe, or confusing behavior
+title: "bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Remove tokens, private URLs, customer names, and sensitive paths before submitting.
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Coding agent
+      options: [Claude Code, OpenAI Codex, Other, Helper used directly]
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system and Python version
+      placeholder: Windows 11, Python 3.13
+    validations:
+      required: true
+  - type: textarea
+    id: connection
+    attributes:
+      label: Connection condition
+      description: For example, intermittent hotspot, timeout during npm install, VPN reconnect.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and redacted output
+    validations:
+      required: true

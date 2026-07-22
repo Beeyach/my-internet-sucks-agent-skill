@@ -1,0 +1,12 @@
+interface:
+  display_name: My Internet Sucks
+  short_description: Safer agent work on unstable internet
+  default_prompt: Use $my-internet-sucks to finish this task safely on an unstable
+    connection.
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

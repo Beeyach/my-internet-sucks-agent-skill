@@ -1,0 +1,24 @@
+name: Feature request
+description: Suggest support for another failure, tool, or agent
+title: "feature: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What working condition or failure does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What should the skill or helper do differently?
+    validations:
+      required: true
+  - type: dropdown
+    id: remote-write
+    attributes:
+      label: Could this repeat or change remote state?
+      options: [No, Yes, Unsure]
+    validations:
+      required: true
